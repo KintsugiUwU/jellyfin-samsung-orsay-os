@@ -25,15 +25,28 @@ Pre-Install steps
 
 Before install, a local "app store" must be set up on a local machine
 
-For windows:
+Windows:
 - Install "Internet Information Services" (IIS) available in Windows additionnal softwares
 - Open a powershell, type ipconfig
 - Write down the local IP of your machine (xxx.xxx.xxx.xxx) as you will need it during the install procedure as the ">Local app store's IP address"
 - Download the jellyfin.xxx.zip and widgetlist.xml
 - Copy widgetlist.xml at the root of the folder: "c:\inetpub\wwwroot"
 - Copy jellyfin.xxx.zip in a new subfolder named Widgets: "c:\inetpub\wwwroot\Widgets"
-- Modify the widgetlist.xml file and change the IP address to your Local IP address <download>http://192.168.1.26/Widgets/Jellyfin_2.2.6_Europe_20230928.zip</download> to <download>http://LocalIPaddress/Widgets/Jellyfin_2.2.6_Europe_20230928.zip</download>
+- Edit the widgetlist.xml file and change the IP address to your Local IP address <download>http://192.168.1.26/Widgets/Jellyfin_2.2.6_Europe_20230928.zip</download> to <download>http://LocalIPaddress/Widgets/Jellyfin_2.2.6_Europe_20230928.zip</download>
 - Make sure files are available, open a web browser and type: http://localhost/widgetlist.xml
+
+MacOS or Linux:
+- Get Local IP address (e.g. using ifconfig Terminal command)
+- Download the jellyfin.xxx.zip and widgetlist.xml 
+- Create a directory under your Home directory called jellyfin (e.g. /User/YourName/jellyfin)
+- Copy widgetlist.xml at the root of the directory:
+- Create another directory under jellyfin called Widgets (e.g. /User/YourName/jellyfin/Widgets)
+- Copy the jellyfin.xxx.zip file to the Widgets folder (e.g. /User/YourName/jellyfin/Widgets/Jellyfin_2.2.6_Europe_20230928.zip)
+- Edit the widgetlist.xml file and change the IP address to your Local IP address <download>http://192.168.1.26/Widgets/Jellyfin_2.2.6_Europe_20230928.zip</download> to <download>http://LocalIPaddress/Widgets/Jellyfin_2.2.6_Europe_20230928.zip</download>
+- Start the Terminal App and goto the jellyfin directory (e.g. cd /User/YourName/jellyfin)
+- Start a temporary web server using PYTHON using the following command:python -m SimpleHTTPServer 80
+- Go to your TV and install the Jellyfin App using your MacOS's IP address (detailed instructions below)
+- When complete, stop the temporary web server on your Mac by entering Control-C on the terminal.
 
 ------------------
 Post-Install notes
